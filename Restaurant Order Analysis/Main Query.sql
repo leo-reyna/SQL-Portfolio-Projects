@@ -55,3 +55,20 @@ SELECT
     max_price.price AS most_expensive_price
 FROM min_price_cte AS min_price, max_price_cte AS max_price;
 
+-- How many dishes are in each category? What is the average dish price within each category?
+
+SELECT category, COUNT(*) AS number_of_items, AVG(price) AS average_price
+FROM dbo.menu_items
+GROUP BY category
+ORDER BY category;
+
+-- TASK - 2
+-- 2.1 View the order_details table. What is the date range of the table?
+
+SELECT MIN(order_date) AS start_date, MAX(order_date) AS end_date
+FROM dbo.order_details;
+
+--2.2 How many orders were made within this date range? 
+SELECT COUNT(DISTINCT order_id) AS number_of_orders
+FROM dbo.order_details
+WHERE order_date BETWEEN '2023-01-01' AND '2023-03-31';
