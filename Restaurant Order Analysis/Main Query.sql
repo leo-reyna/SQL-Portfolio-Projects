@@ -191,3 +191,5 @@ LEFT JOIN menu_items AS mi
     ON od.item_id = mi.menu_item_id
 WHERE order_id in (440, 2075, 1957, 330, 2675)
 GROUP BY category, order_id
+
+-- End of the SQL code.
