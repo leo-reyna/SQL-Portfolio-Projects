@@ -1,0 +1,38 @@
+USE restaurant_db;
+
+SELECT * FROM dbo.menu_items;
+
+/* View the menu_items table and write a query to find the number of items on the menu */
+
+SELECT count(*) AS number_of_items
+FROM dbo.menu_items
+
+/* What are the least and most expensive items on the menu? */
+SELECT 
+       MIN(price) AS least_expensive_item,
+       MAX(price) AS most_expensive_item
+FROM dbo.menu_items;
+
+-- The following query uses Common Table Expressions (CTEs) to find the least and most expensive items on the menu.
+
+WITH min_price_cte AS (
+    SELECT item_name, price
+    FROM dbo.menu_items
+    WHERE price = (SELECT MIN(price) FROM dbo.menu_items)
+),
+max_price_cte AS (
+    SELECT item_name, price
+    FROM dbo.menu_items
+    WHERE price = (SELECT MAX(price) FROM dbo.menu_items)
+)
+SELECT 
+    min_price.item_name AS least_expensive_item,
+    max_price.item_name AS most_expensive_item,
+    min_price.price AS least_expensive_price,
+    max_price.price AS most_expensive_price 
+FROM min_price_cte AS min_price, max_price_cte AS max_price;
+
+/* How many Italian dishes are on the menu? */
+SELECT count(*) AS number_of_items
+FROM dbo.menu_items
+WHERE category = 'Italian';
