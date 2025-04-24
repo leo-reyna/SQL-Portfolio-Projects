@@ -10,11 +10,11 @@ The initial phase involved converting disorganized data into a structured, analy
 
 * Deduplication: Identified and removed duplicate entries to ensure data integrity.
   
+* Standardization: Unified formats for dates, numeric values, and categorical fields to maintain consistency.
+  
 * Data Aggregation: Combined data from multiple sources such as news articles, company reports, and industry publications to ensure diverse sector and regional coverage.
 
 * Handling Missing Values: Applied suitable imputation methods or removed records with insufficient information.
-
-* Standardization: Unified formats for dates, numeric values, and categorical fields to maintain consistency.
 
 * Error Correction: Cross-referenced data with trusted sources to correct anomalies and inaccuracies.
 
