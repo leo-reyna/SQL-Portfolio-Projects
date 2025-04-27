@@ -130,21 +130,20 @@ UPDATE layoffs_staging2
 SET Industry = 'Travel'
 WHERE company = 'Airbnb'
 
-SELECT t1.industry, t2.industry
+SELECT 
+    t1.industry, 
+    t2.industry
 FROM layoffs_staging2 AS t1
 JOIN layoffs_staging2 AS t2
-ON t1.company = t2.company
-and t1.[company] = t2.[company]
-WHERE (t1.[industry] IS NULL or t1.[industry] = '') 
-and t2.industry is not NULL
+    ON t1.company = t2.company and t1.[company] = t2.[company]
+WHERE (t1.[industry] IS NULL or t1.[industry] = '') and t2.industry is not NULL
 
 UPDATE t1
 SET t1.[industry] = t2.[industry]
 FROM layoffs_staging2 t1
 INNER JOIN layoffs_staging2 t2
 ON t1.company = t2.company
-WHERE (t1.[industry] IS NULL OR t1.[industry] = '') 
-AND t2.industry IS NOT NULL
+WHERE (t1.[industry] IS NULL OR t1.[industry] = '') AND t2.industry IS NOT NULL
 
 -- Removing unnecessary columns and rows
 SELECT *
