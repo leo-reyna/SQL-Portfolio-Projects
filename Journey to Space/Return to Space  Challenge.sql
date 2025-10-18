@@ -2,6 +2,16 @@
 
 SELECT * FROM space_missions;
 
+SELECT * FROM space_missions
+WHERE Rocket like '%cosmos-3m%'
+ORDER BY MissionStatus;
+
+
+SELECT COUNT(MissionStatus) 
+FROM space_missions
+WHERE Rocket like '%cosmos-3m%'
+ORDER BY MissionStatus;
+
 /* 
 From Maven Analytics - Return to Space Challenge Oct 2025
 The Ultimate Rocket Ranking: Which rocket (by name, cost, or size) is the true champion of space?
@@ -16,30 +26,35 @@ All space missions from 1957 to August 2022, including details on the location, 
 */
 
 -- Most Successful Rocket by Launch Count
-WITH cte1 AS (SELECT Rocket, COUNT(*) AS TotalLaunches
-                FROM space_missions
-                WHERE MissionStatus = 'Success'
-                GROUP BY Rocket
-                ORDER BY TotalLaunches DESC),
-
-    cte2 as (SELECT Rocket, COUNT(*) AS TotalLaunches
-                FROM space_missions
-                WHERE MissionStatus = 'Failure'
-                GROUP BY Rocket
-                ORDER BY TotalLaunches DESC),
-
-    cte3 as (SELECT Rocket, COUNT(*) AS TotalLaunches
-                FROM space_missions
-                WHERE MissionStatus = 'Partial Failure'
-                GROUP BY Rocket
-                ORDER BY TotalLaunches DESC)
+WITH 
+cte_success AS (
+    SELECT Rocket, COUNT(*) AS Successful
+    FROM space_missions
+    WHERE MissionStatus = 'Success'
+    GROUP BY Rocket
+),
+cte_failure AS (
+    SELECT Rocket, COUNT(*) AS Failed
+    FROM space_missions
+    WHERE MissionStatus = 'Failure'
+    GROUP BY Rocket
+),
+cte_partial AS (
+    SELECT Rocket, COUNT(*) AS PartialFailure
+    FROM space_missions
+    WHERE MissionStatus = 'Partial Failure'
+    GROUP BY Rocket
+),
+all_rockets AS (
+    SELECT Rocket FROM space_missions GROUP BY Rocket
+)
 SELECT 
-    cte1.Rocket,
-    cte1.TotalLaunches as "Successful",
-    COALESCE(cte2.TotalLaunches, 0) as "Failed",
-    COALESCE(cte3.TotalLaunches,0)  as "Partial Failure"
-FROM cte1
-LEFT JOIN cte2
-    ON cte1.rocket = cte2.rocket
-LEFT JOIN cte3
-    ON cte2.rocket = cte3.rocket;
+    r.Rocket,
+    COALESCE(s.Successful, 0) AS Successful,
+    COALESCE(f.Failed, 0) AS Failed,
+    COALESCE(p.PartialFailure, 0) AS [Partial Failure]
+FROM all_rockets AS r
+LEFT JOIN cte_success s ON r.Rocket = s.Rocket
+LEFT JOIN cte_failure f ON r.Rocket = f.Rocket
+LEFT JOIN cte_partial p ON r.Rocket = p.Rocket;
+
