@@ -1,5 +1,7 @@
 -- Active: 1745290413437@@127.0.0.1@3306@journey_to_space
-
+/*
+  WORK IN PROGRESS - OCT 2025
+*/
 SELECT * FROM space_missions;
 
 SELECT * FROM space_missions
@@ -52,7 +54,7 @@ SELECT
     r.Rocket,
     COALESCE(s.Successful, 0) AS Successful,
     COALESCE(f.Failed, 0) AS Failed,
-    COALESCE(p.PartialFailure, 0) AS [Partial Failure]
+    COALESCE(p.PartialFailure, 0) AS PartialFailure
 FROM all_rockets AS r
 LEFT JOIN cte_success s ON r.Rocket = s.Rocket
 LEFT JOIN cte_failure f ON r.Rocket = f.Rocket

@@ -1,0 +1,306 @@
+listing_id,make,model,year,price,mileage,seller_type,city,posted_date,fuel_type
+1,Toyta,Accord,1971,"$19,049",N/A,Dealer,San Diego,06-28-2021,Hybrid
+2,Toyota,Civic,1975,"$36,118",158815 mi,dealer,San Diego,2023-05-10,Hybrid
+3,Tesla,RAV4,2021,"$52,729",,Private,Phoenix,2021-11-15,Electric
+4,Honda,Accord,1994,"$58,541",unknown,Dealer,San Antonio,2024-01-04,Hybrid
+5,Honda,Elantra,1988,"$43,535",N/A,Dealer,New York,2024-09-16,Electric
+6,Honda,Model 3,2025,"$21,217",unknown,dealer,Philly,2022-12-29,Electric
+7,Hondaa,Accord,2008,"$38,005",N/A,dealer,San Antonio,17/02/2023,
+8,Chevrolet,Altima,2023,"$6,665",61043 mi,Private,Dallas,2022-07-03,Diesel
+9,Nissn,Silverado,2026,"$16,934",,private,San Antonio,20/10/2021,Diesel
+10,Chevrolet,Elantra,2004,"$41,311",,Private,Houston,10-11-2021,Hybrid
+11,Honda,Civic,2025,"$44,120",,Dealer,Dallas,02-21-2023,Hybrid
+12,Hyundai,RAV4,2005,"$3,752",179332 mi,Private,Philly,17/08/2021,Hybrid
+13,Ford,Sorento,1970,"$50,164",N/A,Dealer,Phoenix,08-01-2024,
+14,Chevrolet,Camry,1993,"$38,348",140029 mi,Private,San Antonio,2021-02-09,Electric
+15,Nissn,RAV4,1985,"$40,182",21645 mi,private,Los Angeles,2023-12-27,Diesel
+16,Toyta,Sorento,2030,"$20,370",,dealer,San Diego,2024-11-13,Electric
+17,Mercedes,Altima,1998,"$32,588",N/A,dealer,Los Angeles,2022-11-24,
+18,Hyundai,Model 3,2007,"$7,652",186556 mi,dealer,Los Angeles,06/03/2021,Gasoline
+19,Hyundai,Model 3,1987,"$17,040",N/A,private,Houston,27/08/2023,Diesel
+20,Honda,Accord,2012,"$30,759",,Dealer,Los Angeles,05/05/2021,Electric
+21,Forrd,Accord,1985,"$38,146",N/A,private,Chicago,25/07/2022,Diesel
+22,Chevy,Accord,1998,"$59,096",145264 mi,Dealer,San Diego,2021-01-31,Diesel
+23,Ford,F-150,2001,"$59,665",106130 mi,dealer,Dallas,05/01/2021,Electric
+24,Nissn,Sorento,1988,"$50,874",,dealer,Houston,2022-08-31,Gasoline
+25,Tesla,Elantra,1973,"$6,746",,dealer,New York,2023-11-07,Diesel
+26,Honda,Silverado,1974,"$18,414",106847 mi,dealer,Austin,2024-05-02,
+27,Honda,F-150,2012,"$37,261",unknown,dealer,Philly,04/05/2022,Hybrid
+28,Ford,RAV4,1999,"$52,274",20016 mi,private,Austin,2024-02-28,Gasoline
+29,Hyundai,Model 3,2002,"$25,872",N/A,Private,Phoenix,20/11/2021,
+30,Hondaa,RAV4,2009,"$55,894",172435 mi,Private,Los Angeles,03/10/2021,Gasoline
+31,Nissn,Accord,2017,"$20,848",N/A,Private,Houston,11-08-2024,Electric
+32,Hyundai,Sorento,1986,"$58,450",14316 mi,private,Phoenix,2021-04-01,Electric
+33,Forrd,Camry,2010,"$13,589",,private,San Diego,2021-01-20,Gasoline
+34,Nissn,Camry,2004,unknown,N/A,private,Chicago,27/03/2021,Electric
+35,Nissn,Civic,2027,"$47,699",66412 mi,Private,San Diego,04-13-2023,Diesel
+36,Nissn,Model 3,2025,"$55,421",,Dealer,Chicago,12/11/2022,Diesel
+37,Nissan,Camry,2020,"$28,070",,dealer,Houston,01/08/2023,Electric
+38,Chevy,Model 3,1984,unknown,,Private,Phoenix,23/05/2021,Electric
+39,Toyta,Elantra,1995,"$58,290",unknown,Dealer,Los Angeles,2022-06-19,
+40,Nissan,Civic,1976,"$25,654",unknown,private,Austin,2023-11-14,Hybrid
+41,Nissn,Silverado,1982,"$49,450",115309 mi,dealer,Philly,2023-06-03,Electric
+42,Tesla,Altima,2012,"$50,169",unknown,private,Philly,04-05-2023,Electric
+43,Hyundai,Camry,1982,"$27,847",N/A,Private,Dallas,2024-01-28,Electric
+44,Nissan,Model 3,1997,"$42,758",unknown,private,San Antonio,06-25-2023,Diesel
+45,Hyundai,Sorento,2020,"$55,168",N/A,Dealer,Phoenix,11-22-2023,
+46,BMW,Accord,2022,"$18,392",unknown,dealer,Houston,2021-10-29,Gasoline
+47,Chevrolet,Sorento,2009,"$7,772",,dealer,Dallas,10/10/2023,Diesel
+48,Ford,Civic,2027,"$53,465",,dealer,Chicago,11-26-2024,Hybrid
+49,Toyota,Elantra,1985,"$10,953",N/A,private,San Diego,02-19-2024,Electric
+50,Forrd,Sorento,2009,"$36,081",,dealer,San Antonio,11/07/2023,Diesel
+51,Chevy,RAV4,2019,"$34,758",N/A,Private,San Antonio,06-08-2021,Electric
+52,Chevrolet,RAV4,1991,"$38,399",N/A,dealer,Houston,02-24-2023,Diesel
+53,Hondaa,Model 3,1974,"$24,684",,private,New York,28/02/2022,Hybrid
+54,Nissn,Silverado,2030,"$59,146",,private,New York,22/12/2022,Hybrid
+55,Chevy,F-150,2004,"$38,791",N/A,private,Houston,13/07/2022,Hybrid
+56,Toyota,F-150,1991,"$55,307",N/A,private,Chicago,06-28-2024,Gasoline
+57,Nissn,F-150,2007,"$4,776",,dealer,San Antonio,2022-01-08,Electric
+58,Mercedes,Altima,1983,"$25,118",unknown,private,Phoenix,17/06/2021,Gasoline
+59,Hondaa,Elantra,1973,"$25,935",59778 mi,Dealer,New York,2022-05-22,Gasoline
+60,Tesla,Camry,1985,"$46,873",N/A,private,Phoenix,2023-01-26,
+61,Tesla,Accord,2019,"$23,384",29337 mi,Private,Austin,19/10/2024,Hybrid
+62,Hondaa,Model 3,1974,"$57,432",N/A,Dealer,Phoenix,11-02-2024,Gasoline
+63,Forrd,Silverado,2020,unknown,,Private,Los Angeles,11-03-2023,Electric
+64,Toyota,F-150,2022,"$31,411",,dealer,Dallas,12-27-2021,
+65,Toyta,RAV4,2009,"$38,269",,private,Austin,04/07/2022,Diesel
+66,Chevy,Accord,1987,"$18,981",,private,Philly,28/02/2021,Electric
+67,Ford,Sorento,1983,"$19,931",unknown,Private,San Diego,01-21-2021,Diesel
+68,Honda,Model 3,2016,"$39,384",N/A,private,San Antonio,2023-07-07,Gasoline
+69,Nissan,Model 3,1995,"$23,067",unknown,private,San Diego,24/12/2023,Hybrid
+70,Hondaa,Elantra,1991,"$32,736",unknown,Private,Houston,09-05-2021,Diesel
+71,BMW,Accord,2017,"$52,950",N/A,dealer,Houston,19/09/2023,
+72,Forrd,Elantra,2008,"$9,588",unknown,dealer,Philly,03/01/2022,Gasoline
+73,Hondaa,Elantra,1978,"$6,573",unknown,dealer,San Antonio,2021-07-30,
+74,Nissan,Sorento,2000,"$15,082",unknown,private,Los Angeles,14/05/2021,Hybrid
+75,Honda,Silverado,2010,"$12,943",unknown,Dealer,Houston,08-31-2021,Hybrid
+76,Tesla,Silverado,2020,"$53,835",,private,San Antonio,09-01-2022,Hybrid
+77,Nissan,Silverado,2009,"$51,502",N/A,dealer,Phoenix,2024-09-14,Diesel
+78,Chevrolet,Camry,2005,"$3,175",,private,Phoenix,2021-03-08,Electric
+79,Hondaa,RAV4,2014,"$7,664",N/A,Private,Austin,2024-09-16,Hybrid
+80,Honda,Elantra,1984,"$20,408",38286 mi,Dealer,Chicago,09-22-2022,
+81,Nissn,RAV4,1998,"$48,133",,Private,San Diego,11/01/2024,Hybrid
+82,Honda,Silverado,1972,"$51,138",unknown,Dealer,Los Angeles,04-14-2022,
+83,Tesla,Civic,2018,"$20,662",152059 mi,dealer,San Antonio,11-29-2023,Hybrid
+84,Nissn,RAV4,1981,"$31,566",,Dealer,San Antonio,14/12/2022,Electric
+85,BMW,Accord,2024,"$29,977",,Private,Dallas,2024-02-01,Hybrid
+86,Honda,Altima,1986,"$53,629",106952 mi,private,Dallas,2021-04-22,
+87,BMW,Silverado,2018,"$31,969",N/A,Private,San Diego,26/09/2021,Hybrid
+88,Nissn,Sorento,1977,unknown,N/A,dealer,Phoenix,2024-02-03,
+89,Mercedes,Accord,1984,"$10,435",121965 mi,dealer,San Antonio,08-21-2022,Electric
+90,Mercedes,Sorento,2000,"$39,127",,dealer,Austin,11-07-2023,Diesel
+91,Chevy,Accord,1987,"$58,994",unknown,Private,New York,08-03-2022,Electric
+92,Chevy,Silverado,2007,"$35,089",,private,Philly,11-12-2022,
+93,Mercedes,Sorento,2029,"$15,363",N/A,private,Houston,2023-04-22,Electric
+94,Hondaa,Sorento,2015,"$27,984",N/A,private,New York,09-16-2021,
+95,BMW,Accord,2025,"$9,534",,Dealer,Chicago,04-20-2023,Diesel
+96,Honda,Sorento,2020,"$25,187",,Dealer,Philly,10-13-2024,Hybrid
+97,BMW,Sorento,2025,"$43,465",N/A,Private,Houston,05/07/2021,Gasoline
+98,Forrd,Accord,1998,"$22,625",8588 mi,Private,New York,24/08/2022,Electric
+99,Mercedes,Camry,1985,"$40,088",N/A,dealer,Chicago,06-11-2021,Hybrid
+100,Tesla,Model 3,2001,"$12,379",,Private,San Antonio,06-07-2022,Gasoline
+101,Nissn,Sorento,2027,"$38,821",42412 mi,private,Philly,18/04/2024,Hybrid
+102,Hondaa,RAV4,1999,"$16,055",,Dealer,Houston,02-21-2023,Electric
+103,Tesla,RAV4,2014,"$57,397",,Private,New York,03-05-2024,Gasoline
+104,Nissn,Silverado,2017,"$21,756",unknown,dealer,Houston,25/06/2024,Diesel
+105,Toyta,Accord,2027,"$5,583",,Dealer,Austin,01-18-2023,Diesel
+106,Honda,RAV4,1990,"$14,510",N/A,Private,San Diego,25/10/2023,Diesel
+107,Nissan,Sorento,2031,"$51,926",89792 mi,private,Los Angeles,2021-10-16,Hybrid
+108,Chevy,Elantra,1993,"$28,858",unknown,Dealer,San Antonio,01-25-2023,Electric
+109,Tesla,F-150,2022,"$27,344",N/A,private,New York,06-22-2024,Electric
+110,Nissn,Silverado,1984,"$44,641",unknown,private,Los Angeles,2021-10-14,Gasoline
+111,Nissan,Sorento,1977,"$38,228",,private,Philly,10-05-2024,
+112,Mercedes,Silverado,2017,"$30,189",172683 mi,private,Austin,16/04/2023,Gasoline
+113,Hondaa,Altima,1983,"$18,473",96075 mi,Private,San Diego,13/08/2024,Gasoline
+114,Mercedes,RAV4,1982,"$58,576",120201 mi,dealer,Austin,2021-02-13,Electric
+115,Chevrolet,Camry,2020,"$7,496",N/A,dealer,Houston,2022-11-04,
+116,Toyota,RAV4,2024,"$11,519",unknown,dealer,Los Angeles,2024-09-15,Diesel
+117,Toyota,Altima,2020,"$41,591",85874 mi,dealer,Phoenix,2021-04-18,Hybrid
+118,Hyundai,Accord,2017,"$32,378",95906 mi,private,San Diego,03-30-2022,Gasoline
+119,Hondaa,Elantra,1989,"$5,041",,private,Dallas,2024-11-06,Hybrid
+120,Hondaa,Sorento,1974,"$24,109",N/A,Dealer,Chicago,07-18-2022,
+121,Hyundai,Altima,1994,"$37,770",,private,Los Angeles,2024-12-08,
+122,Hondaa,Model 3,1997,"$17,974",unknown,private,Dallas,05-02-2023,Gasoline
+123,BMW,F-150,1990,"$27,530",,Dealer,Los Angeles,2021-06-24,Hybrid
+124,Honda,Altima,2021,"$6,930",unknown,Dealer,Dallas,12-26-2022,Hybrid
+125,Chevy,Civic,2031,"$23,476",93181 mi,dealer,Chicago,06/09/2024,Diesel
+126,Chevy,Accord,1992,"$27,088",unknown,dealer,Dallas,02-23-2024,
+127,Toyta,Elantra,1971,"$46,111",unknown,Dealer,Chicago,07-14-2022,Electric
+128,Nissn,Altima,1992,unknown,,Dealer,Chicago,2024-07-20,Gasoline
+129,Hondaa,Elantra,1983,"$32,730",N/A,Private,Phoenix,10-27-2022,
+130,Honda,Civic,1979,"$43,490",14044 mi,Private,San Antonio,17/09/2024,Hybrid
+131,Tesla,Sorento,1996,"$52,475",135308 mi,Private,Dallas,16/08/2021,
+132,Kia,Elantra,2012,"$17,451",104615 mi,Dealer,Houston,2022-09-10,Diesel
+133,Forrd,RAV4,1988,"$3,506",,dealer,Chicago,02-18-2023,Diesel
+134,Hyundai,Elantra,2023,"$26,210",,Dealer,Dallas,08/02/2021,Gasoline
+135,Chevy,Altima,2006,"$29,504",,Private,Los Angeles,2023-04-10,Electric
+136,Ford,Silverado,1999,"$26,714",,Dealer,Houston,06-12-2023,Hybrid
+137,Hyundai,Accord,1995,"$51,877",N/A,Private,Chicago,06-06-2021,Gasoline
+138,Hyundai,Elantra,1982,"$25,896",N/A,dealer,Los Angeles,27/10/2021,Diesel
+139,Ford,Silverado,1979,"$45,959",N/A,private,San Antonio,02-29-2024,Hybrid
+140,Toyta,Silverado,2011,"$43,928",unknown,dealer,San Antonio,20/05/2021,Hybrid
+141,Toyta,RAV4,2020,"$6,681",93259 mi,Private,San Antonio,2023-07-15,Gasoline
+142,BMW,RAV4,1974,"$59,052",,private,Austin,02-10-2024,Gasoline
+143,Kia,Silverado,2011,"$42,649",N/A,Dealer,San Antonio,31/07/2021,Gasoline
+144,Hyundai,Camry,1972,"$31,688",N/A,Private,Philly,03/08/2022,Hybrid
+145,Forrd,Altima,2013,"$54,722",unknown,Dealer,Philly,07-13-2021,Hybrid
+146,Nissan,RAV4,2016,"$42,498",unknown,Dealer,Austin,2024-09-21,Electric
+147,Nissan,F-150,1978,"$8,552",,Private,Chicago,10-04-2024,
+148,Honda,F-150,2002,"$26,763",N/A,dealer,Philly,2023-09-23,Diesel
+149,Ford,Camry,1974,"$54,650",27513 mi,Private,Austin,09-26-2021,Hybrid
+150,Ford,Camry,1981,"$53,534",N/A,private,New York,22/04/2023,Diesel
+151,Kia,Silverado,1988,"$54,367",N/A,dealer,Phoenix,2023-08-19,Electric
+152,Toyta,Silverado,1998,"$21,466",,dealer,Houston,2024-05-23,Electric
+153,Toyota,Sorento,2025,"$9,723",187489 mi,Private,Los Angeles,25/11/2021,Hybrid
+154,Nissn,Elantra,1979,"$9,010",,Private,New York,2023-04-30,Hybrid
+155,Hyundai,Altima,1985,"$8,348",N/A,Dealer,Philly,07-22-2021,Electric
+156,Forrd,Camry,1978,unknown,N/A,private,San Antonio,2024-06-14,Gasoline
+157,Toyota,RAV4,1983,"$38,966",,Dealer,Phoenix,02/05/2022,Gasoline
+158,Toyota,Model 3,1996,"$43,816",120829 mi,Dealer,San Antonio,05-07-2024,Gasoline
+159,Toyta,Elantra,2006,"$12,409",,Dealer,Austin,2022-12-24,
+160,Mercedes,Camry,2012,"$37,307",95530 mi,Dealer,Dallas,2023-08-21,Hybrid
+161,BMW,RAV4,2017,unknown,unknown,dealer,Los Angeles,04-06-2024,Electric
+162,Ford,Civic,1992,"$56,314",N/A,private,San Antonio,2024-07-17,Diesel
+163,Honda,Sorento,1972,"$5,870",53289 mi,Private,Phoenix,22/11/2023,
+164,Kia,RAV4,1972,"$15,524",unknown,Dealer,Philly,2022-07-14,Electric
+165,Mercedes,F-150,2017,"$28,339",N/A,private,San Antonio,01-23-2023,Electric
+166,Forrd,Accord,2016,"$31,220",N/A,Private,Philly,2021-07-30,Electric
+167,Toyta,RAV4,1989,"$50,032",N/A,private,Philly,2023-07-05,Electric
+168,Tesla,F-150,1987,"$54,870",16036 mi,private,Philly,11-17-2023,Diesel
+169,Toyota,Camry,2024,"$54,204",115864 mi,dealer,Los Angeles,04-29-2022,Electric
+170,BMW,F-150,2030,"$42,655",,Private,Philly,2023-06-29,
+171,Ford,Elantra,1993,"$45,569",N/A,Dealer,New York,17/01/2022,
+172,Mercedes,Elantra,1977,"$20,058",,dealer,Austin,08-08-2022,Hybrid
+173,Chevrolet,Accord,1978,"$32,625",,Dealer,Philly,29/09/2024,Gasoline
+174,Hyundai,Elantra,1988,"$58,794",N/A,Private,San Diego,2022-04-05,Diesel
+175,Forrd,Camry,1985,"$4,722",unknown,private,San Diego,09-23-2021,Gasoline
+176,Honda,RAV4,1995,"$50,111",,private,Austin,2021-06-01,Electric
+177,Toyta,Accord,1998,"$36,905",N/A,dealer,Chicago,06-06-2023,Gasoline
+178,Chevy,Accord,2003,"$13,790",unknown,dealer,Philly,29/11/2023,Gasoline
+179,Nissan,Model 3,2010,"$20,986",unknown,Dealer,San Diego,2024-08-05,
+180,Tesla,Camry,1980,"$50,227",unknown,Dealer,New York,2021-06-16,
+181,Nissan,Model 3,2019,"$43,508",168507 mi,private,San Diego,08-17-2022,Electric
+182,Kia,Model 3,2021,"$29,613",,Dealer,New York,20/11/2021,Hybrid
+183,Kia,Sorento,1983,"$12,415",unknown,Private,Dallas,25/09/2021,
+184,Hyundai,Accord,1990,"$11,029",,dealer,Chicago,2021-07-18,Electric
+185,Mercedes,Silverado,1996,"$59,708",unknown,Private,Houston,23/11/2021,
+186,Kia,Sorento,2026,"$4,518",,private,Houston,03-17-2022,Electric
+187,Toyota,Civic,1988,"$58,236",,Private,San Diego,2021-01-17,Hybrid
+188,Ford,RAV4,2016,"$29,427",96928 mi,private,New York,03-13-2024,Diesel
+189,BMW,Elantra,1988,"$36,046",unknown,Dealer,Chicago,18/07/2021,Electric
+190,Forrd,Altima,2005,"$52,477",N/A,private,San Diego,2021-03-24,Gasoline
+191,Ford,Altima,2021,"$32,949",N/A,Private,Austin,2022-10-15,Hybrid
+192,Tesla,RAV4,2007,"$57,282",,Private,San Antonio,04/02/2021,Electric
+193,Toyta,Accord,1996,"$55,216",191139 mi,private,Phoenix,09-04-2024,
+194,Chevrolet,Civic,2007,"$37,356",,dealer,Houston,03-06-2021,Gasoline
+195,Chevrolet,Civic,1998,"$12,924",N/A,private,San Diego,06/06/2024,Gasoline
+196,Hondaa,Camry,2003,"$24,302",,private,Philly,21/12/2021,
+197,BMW,Elantra,1992,"$59,862",unknown,private,Houston,20/05/2022,
+198,Nissan,Model 3,2030,"$22,504",N/A,private,Philly,10/09/2023,
+199,Nissn,RAV4,1988,"$47,343",,private,Philly,27/10/2021,Gasoline
+200,Nissan,Accord,1992,"$45,989",,dealer,Houston,09/01/2024,
+201,Hondaa,RAV4,1978,"$51,555",N/A,dealer,New York,10-03-2024,Diesel
+202,Toyta,Model 3,1973,"$24,646",,Dealer,Chicago,01-11-2021,Diesel
+203,Mercedes,Sorento,2000,"$52,539",unknown,Private,New York,07-03-2021,
+204,Chevrolet,Elantra,2017,"$5,444",,dealer,New York,25/03/2023,Diesel
+205,Nissn,RAV4,2026,unknown,79221 mi,Private,Phoenix,07-20-2023,
+206,Hyundai,Sorento,2026,"$58,775",,Private,Houston,19/08/2021,Diesel
+207,Hondaa,Sorento,2011,"$15,202",unknown,Private,Austin,2024-10-13,Diesel
+208,Tesla,F-150,2022,"$24,491",,Dealer,Chicago,15/10/2021,Electric
+209,Nissn,Model 3,1970,"$18,435",unknown,Private,Phoenix,04-07-2024,
+210,Toyota,RAV4,2011,"$18,486",17285 mi,private,Phoenix,24/11/2021,
+211,Nissn,RAV4,2014,"$22,335",N/A,dealer,Chicago,2023-09-07,Hybrid
+212,Hondaa,Silverado,1993,"$38,994",N/A,dealer,Austin,06-17-2021,Hybrid
+213,Hyundai,Altima,1974,"$10,353",N/A,dealer,Chicago,11-03-2022,Hybrid
+214,Honda,Model 3,2015,"$8,959",,Dealer,San Antonio,09-28-2021,Hybrid
+215,Kia,Silverado,1973,"$47,090",81784 mi,private,Phoenix,01-07-2021,Diesel
+216,Tesla,Accord,1972,"$48,900",17714 mi,Dealer,San Antonio,06/03/2021,Hybrid
+217,Ford,Camry,2019,"$50,794",,Private,Dallas,08/07/2023,Hybrid
+218,Honda,Elantra,1978,"$25,791",N/A,private,San Diego,09-18-2021,Diesel
+219,Chevy,Civic,2018,unknown,,private,San Diego,2023-02-16,Diesel
+220,Kia,Altima,1979,"$50,515",30581 mi,private,Austin,2021-02-02,Diesel
+221,Honda,Accord,2008,unknown,157705 mi,dealer,New York,04/04/2023,Diesel
+222,Hyundai,Model 3,2018,"$6,699",unknown,dealer,Austin,10-16-2022,
+223,Forrd,Altima,1985,"$12,388",N/A,private,Phoenix,2022-07-18,
+224,Tesla,Camry,2010,"$39,428",130924 mi,Private,Dallas,11/12/2023,Hybrid
+225,Mercedes,Camry,1989,"$52,441",,dealer,Houston,09-08-2022,Diesel
+226,Forrd,Sorento,2028,"$30,045",N/A,private,Houston,2022-06-07,Electric
+227,Toyta,Accord,2029,"$27,318",N/A,Dealer,Phoenix,02-12-2023,
+228,Tesla,Civic,2025,"$55,733",N/A,private,Houston,13/11/2022,Gasoline
+229,Chevrolet,Model 3,2031,"$51,947",,dealer,Austin,2024-12-12,Hybrid
+230,Nissn,Model 3,2005,"$21,550",,Private,Phoenix,20/06/2022,
+231,Nissn,Sorento,1999,"$50,344",unknown,dealer,Philly,03/10/2022,Gasoline
+232,Tesla,Model 3,2017,"$20,090",,Private,Chicago,06/02/2022,Diesel
+233,Mercedes,Silverado,2023,"$39,086",unknown,Private,San Antonio,08-07-2024,Hybrid
+234,Kia,Camry,2016,"$14,092",,dealer,San Diego,2024-08-07,
+235,Toyota,Accord,2030,"$6,179",,dealer,Houston,05-20-2021,Diesel
+236,Toyota,Model 3,2002,"$6,961",,private,New York,01-14-2021,
+237,Mercedes,Civic,1971,"$21,005",unknown,Dealer,San Diego,11-30-2024,Hybrid
+238,Forrd,Camry,1976,"$37,366",N/A,dealer,Austin,15/12/2023,Electric
+239,Nissan,F-150,1975,"$29,609",N/A,dealer,Phoenix,2024-11-01,Gasoline
+240,Honda,F-150,1994,"$34,195",15710 mi,dealer,Los Angeles,21/10/2023,Electric
+241,Tesla,Accord,2027,"$5,788",N/A,private,Phoenix,2021-04-06,Electric
+242,Nissn,Elantra,2006,"$14,754",83440 mi,dealer,Austin,10-23-2021,Hybrid
+243,Nissn,Accord,1989,"$18,759",,Private,Dallas,10-14-2021,Gasoline
+244,Hyundai,Altima,1973,"$18,213",unknown,private,Philly,03-02-2021,Electric
+245,Forrd,Sorento,2001,"$39,243",,dealer,Austin,15/09/2024,Gasoline
+246,Forrd,Silverado,1988,"$49,734",20269 mi,Private,Chicago,02-18-2023,Diesel
+247,Hondaa,F-150,1990,"$8,997",unknown,private,Philly,2022-07-07,Diesel
+248,Honda,Camry,1997,"$39,355",,Dealer,New York,03/07/2021,
+249,Honda,Silverado,2008,"$59,604",101987 mi,Private,Dallas,2023-03-06,
+250,Nissn,Model 3,2006,"$47,912",N/A,dealer,Phoenix,09/09/2022,Hybrid
+251,Ford,Accord,1980,"$30,597",,Dealer,Philly,2022-05-31,Hybrid
+252,Tesla,Silverado,1982,"$11,879",80864 mi,private,Philly,24/06/2024,Electric
+253,Kia,Altima,1997,"$59,328",N/A,Private,Philly,05-20-2024,Diesel
+254,Kia,Altima,1981,"$23,915",,dealer,Philly,10/02/2023,Hybrid
+255,BMW,Accord,2029,"$41,812",N/A,Dealer,San Antonio,2024-12-21,Hybrid
+256,Forrd,RAV4,2023,"$56,671",,dealer,Phoenix,11/05/2022,Diesel
+257,Hondaa,F-150,2020,"$32,430",,private,San Diego,11-04-2023,Hybrid
+258,Hyundai,Civic,2020,"$48,982",141746 mi,Dealer,Houston,09-08-2024,Electric
+259,Ford,Silverado,1972,"$45,272",,Private,Dallas,2021-08-05,Gasoline
+260,Nissan,Model 3,2002,"$39,568",N/A,private,Philly,13/03/2023,
+261,Hondaa,Elantra,1979,"$4,609",127555 mi,Private,Dallas,2021-06-25,Diesel
+262,BMW,RAV4,1991,"$16,557",,Private,San Antonio,19/07/2021,Hybrid
+263,BMW,Accord,1989,unknown,187326 mi,Dealer,Philly,2024-08-20,Diesel
+264,Nissn,Model 3,2003,"$13,494",,private,Houston,04-10-2023,Diesel
+265,Ford,F-150,1995,unknown,N/A,private,Austin,30/05/2023,Gasoline
+266,Hondaa,Model 3,1983,"$49,121",17400 mi,dealer,Philly,2022-10-30,Hybrid
+267,Honda,RAV4,2012,"$37,584",unknown,private,Austin,03-15-2023,Gasoline
+268,BMW,Altima,2024,"$14,306",unknown,Dealer,Chicago,2022-10-04,Diesel
+269,Nissan,Accord,1981,"$12,264",,private,Austin,10-10-2021,Hybrid
+270,Mercedes,Camry,2001,"$48,444",N/A,dealer,San Antonio,2022-08-15,Diesel
+271,BMW,Sorento,2009,"$26,529",,dealer,Houston,02-26-2023,
+272,Toyta,Sorento,1996,"$30,238",,private,Chicago,06-19-2021,Gasoline
+273,Forrd,Model 3,1988,unknown,unknown,dealer,San Antonio,03-04-2024,Hybrid
+274,Hyundai,Elantra,1977,"$20,556",unknown,Dealer,San Antonio,2024-01-24,Hybrid
+275,Honda,Model 3,1989,"$5,112",unknown,Private,Los Angeles,2023-06-19,Diesel
+276,Chevrolet,Silverado,2014,"$49,579",,dealer,Austin,2021-10-13,Diesel
+277,Forrd,Civic,2006,"$21,421",N/A,Private,Phoenix,08-16-2022,Electric
+278,Chevy,Elantra,2027,"$9,240",,Dealer,Phoenix,2024-09-05,Diesel
+279,Chevrolet,Camry,2015,"$19,223",,private,Chicago,03-28-2024,Electric
+280,Toyta,F-150,1994,"$44,525",,Private,Philly,21/07/2023,Electric
+281,Tesla,Civic,2025,"$51,019",,Private,Los Angeles,31/12/2023,Diesel
+282,Mercedes,Model 3,2001,"$57,286",unknown,dealer,Austin,21/09/2023,Gasoline
+283,Toyota,Accord,2010,"$33,119",5268 mi,dealer,San Antonio,2023-07-24,Hybrid
+284,Chevrolet,Camry,2026,"$13,418",72832 mi,Private,Phoenix,18/06/2021,Diesel
+285,Toyota,F-150,2010,"$48,838",N/A,private,Los Angeles,2024-12-12,Gasoline
+286,Chevrolet,Sorento,1974,"$17,823",,Dealer,New York,25/11/2024,Gasoline
+287,Chevy,F-150,2014,"$7,641",,Dealer,Los Angeles,31/07/2021,Electric
+288,Nissn,RAV4,1978,"$56,304",N/A,dealer,Los Angeles,12-23-2023,Gasoline
+289,Tesla,Camry,1998,"$16,962",N/A,private,Austin,07/11/2024,Diesel
+290,Honda,Accord,1978,"$41,638",,Private,Dallas,2022-10-07,Diesel
+291,Nissan,Accord,1985,"$42,322",unknown,Dealer,Phoenix,02-25-2022,
+292,Hyundai,Model 3,2017,"$45,347",N/A,private,Dallas,2021-08-19,Hybrid
+293,Toyta,Silverado,1974,"$3,790",unknown,dealer,Dallas,10/03/2024,Electric
+294,Hyundai,Camry,2018,"$53,486",20134 mi,Dealer,New York,2022-06-21,Gasoline
+295,Nissn,Civic,2030,"$36,201",,private,Dallas,06-18-2021,
+296,Hyundai,Silverado,1979,"$23,310",N/A,dealer,San Diego,01/11/2022,
+297,Toyta,Accord,1989,"$50,838",63557 mi,dealer,Los Angeles,2023-06-09,Hybrid
+298,Tesla,Silverado,1973,"$51,607",N/A,Dealer,New York,2024-12-20,Gasoline
+299,Ford,Sorento,2030,"$36,896",unknown,dealer,Philly,09-17-2021,Electric
+300,Hondaa,Accord,2019,"$24,955",unknown,Dealer,Phoenix,12-29-2024,Gasoline
+190,Forrd,Altima,2005,"$52,477",N/A,private,San Diego,2021-03-24,Gasoline
+124,Honda,Altima,2021,"$6,930",unknown,Dealer,Dallas,12-26-2022,Hybrid
+186,Kia,Sorento,2026,"$4,518",,private,Houston,03-17-2022,Electric
+214,Honda,Model 3,2015,"$8,959",,Dealer,San Antonio,09-28-2021,Hybrid
+107,Nissan,Sorento,2031,"$51,926",89792 mi,private,Los Angeles,2021-10-16,Hybrid

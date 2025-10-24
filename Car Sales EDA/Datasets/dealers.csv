@@ -1,0 +1,31 @@
+dealer_id,dealer_name,city,rating,phone,active
+1,AutoWorld LLC,Chicago,85%,(800)123-4567,No
+2,Best Motors ,Phoenix,90%,8001234567,Yes
+3,Best Motors ,San Diego,85%,+1 888 555 1234,N
+4,CarMax Co.,San Diego,4.2/5,N/A,No
+5,AutoPlanetInc,New York,3.9/5,N/A,N
+6,Prime Auto Co.,New York,85%,+1 888 555 1234,No
+7,City Cars LLC,Houston,90%,8001234567,No
+8,Best Motors LLC,Chicago,85%,8001234567,No
+9,AutoPlanet,Dallas,85%,N/A,Y
+10,AutoPlanetInc,Chicago,4.2/5,+1 888 555 1234,Yes
+11,Prime Auto LLC,Chicago,85%,8001234567,Y
+12,City Cars,Austin,90%,N/A,Y
+13,CarMaxInc,San Diego,4.2/5,8001234567,Yes
+14,AutoPlanet ,Dallas,,N/A,Yes
+15,Prime Auto ,Houston,90%,+1 888 555 1234,Y
+16,Best Motors ,Austin,,N/A,Yes
+17,CarMaxInc,San Antonio,4.2/5,8001234567,Yes
+18,Prime Auto LLC,Los Angeles,3.9/5,+1 888 555 1234,Y
+19,AutoWorld Co.,Philly,,N/A,N
+20,AutoWorldInc,Houston,90%,(800)123-4567,Yes
+21,DriveTime Co.,San Diego,85%,(800)123-4567,No
+22,Super Cars LLC,Los Angeles,4.2/5,N/A,Yes
+23,DriveTime,San Antonio,90%,(800)123-4567,Yes
+24,CarMax,Chicago,90%,(800)123-4567,No
+25,Best Motors LLC,Dallas,3.9/5,N/A,N
+26,Prime Auto,Dallas,85%,(800)123-4567,Yes
+27,City Cars,Los Angeles,90%,(800)123-4567,Y
+28,Best Motors Co.,Los Angeles,90%,N/A,N
+29,EZ Wheels,San Antonio,4.2/5,8001234567,No
+30,EZ Wheels Co.,Phoenix,4.2/5,+1 888 555 1234,Y
