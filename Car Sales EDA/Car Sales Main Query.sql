@@ -1,4 +1,4 @@
--- Active: 1745290413437@@127.0.0.1@3306@car_sales
+
 -- Work in progress - Oct 2025
 
 -- Creating Database
