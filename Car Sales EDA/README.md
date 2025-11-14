@@ -34,9 +34,16 @@ Information about registered dealers:
 - Practice data type conversions, deduplication, and validation  
 - Join multiple tables to uncover business insights  
 - Conduct exploratory queries (e.g., price trends, inquiries per dealer, outlier detection)
+---
+
+| Table                | Row Count | Purpose                           |
+| -------------------- | --------- | --------------------------------- |
+| `car_listings`       | 300       | To find patterns & errors         |
+| `customer_inquiries` | 150       | For joins and relational cleaning |
+| `dealers`            | 30        | For normalization and joining     |
 
 ---
 
 ## 🧰 Tools Used
-- **MySQL Workbench / VSCode / DBeaver**
+- **MySQL Workbench / VSCode**
 - **SQL (DDL + DML)**
