@@ -1,7 +1,9 @@
--- Active: 1745290413437@@127.0.0.1@3306@journey_to_space
+-- Active: 1745290413437@@127.0.0.1@3306
 /*
   WORK IN PROGRESS - OCT 2025
 */
+USE journey_to_space;
+
 SELECT * FROM space_missions;
 
 SELECT * FROM space_missions
@@ -60,3 +62,30 @@ LEFT JOIN cte_success s ON r.Rocket = s.Rocket
 LEFT JOIN cte_failure f ON r.Rocket = f.Rocket
 LEFT JOIN cte_partial p ON r.Rocket = p.Rocket;
 
+
+-- Count of Missions
+SELECT *
+FROM space_missions
+
+SELECT 
+        date,
+        company,
+        count(*) AS TotalMissions,
+            COUNT(CASE WHEN MissionStatus = 'Success' THEN 1 END) AS SuccessfulMissions,
+            COUNT(CASE WHEN MissionStatus = 'Failure' THEN 1 END) AS FailedMissions,
+            COUNT(CASE WHEN MissionStatus = 'Partial Failure' THEN 1 END) AS PartialFailures 
+FROM space_missions
+GROUP BY Company, date;
+
+
+-- Success Rate by Decade
+SELECT     
+        FLOOR(YEAR(date) / 10) * 10 AS Decade,
+        COUNT(*) AS TotalMissions,
+        COUNT(CASE WHEN MissionStatus = 'Success' THEN 1 END) AS SuccessfulMissions,
+        ROUND(
+            (COUNT(CASE WHEN MissionStatus = 'Success' THEN 1 END) * 100.0) / COUNT(*), 2
+        ) AS SuccessRatePercentage
+FROM space_missions
+GROUP BY FLOOR(YEAR(date) / 10) * 10
+ORDER BY FLOOR(YEAR(date) / 10) * 10;
