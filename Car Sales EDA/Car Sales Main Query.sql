@@ -194,6 +194,14 @@ END;
 ALTER TABLE car_listings DROP COLUMN posted_date;
 ALTER TABLE car_listings CHANGE clean_date posted_date DATE;
 
+SELECT 
+        DATE_FORMAT(posted_date, '%Y-%m') AS month,
+        make,
+        COUNT(*) AS listings,
+        SUM(price) AS total_sales
+FROM    car_listings
+GROUP BY month, make
+ORDER BY month, make;
 
 SELECT * from customer_inquiries;
 SELECT * from car_listings;
