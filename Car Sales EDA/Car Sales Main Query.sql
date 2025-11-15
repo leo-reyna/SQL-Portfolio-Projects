@@ -119,7 +119,6 @@ WHERE fuel_type = '';
 ALTER TABLE car_listings
 MODIFY mileage INT;
 
-
 -- Fixing models: the model names are not correct for the brand name
 CREATE TABLE valid_make_model(
   make VARCHAR(50),
@@ -140,7 +139,7 @@ INSERT INTO valid_make_model VALUES
   ('Mercedes', 'C-Class'), ('Mercedes', 'E-Class'), ('Mercedes', 'GLC');
 
 -- Extracting the valid rows
-select * from valid_make_model
+SELECT * FROM valid_make_model
 
 -- Filter out invalid rows
 SELECT  
@@ -167,8 +166,34 @@ JOIN valid_make_model AS vm
   ON cl.make = vm.make AND cl.model != vm.model
 SET cl.model = vm.model;
 
+-- Cleaning Mixed date formatsin car_listing
+ALTER TABLE car_listings
+ADD COLUMN clean_date DATE;
 
-SELECT DISTINCT model from car_listings;
+SELECT posted_date
+FROM car_listings
+WHERE posted_date IS NOT NULL
+  AND STR_TO_DATE(REPLACE(REPLACE(TRIM(posted_date), ' ', ''), '–', '-'), '%m-%d-%Y') IS NULL
+  AND STR_TO_DATE(REPLACE(REPLACE(TRIM(posted_date), ' ', ''), '–', '-'), '%d/%m/%Y') IS NULL;
+  
+UPDATE car_listings
+SET clean_date = CASE
+  -- Already in ISO format: YYYY-MM-DD
+  WHEN posted_date REGEXP '^[0-9]{4}-[0-9]{2}-[0-9]{2}$' THEN
+    STR_TO_DATE(posted_date, '%Y-%m-%d')
+  -- DD/MM/YYYY format
+  WHEN posted_date LIKE '%/%/%' THEN
+    STR_TO_DATE(REPLACE(REPLACE(TRIM(posted_date), ' ', ''), '--', '-'), '%d/%m/%Y')
+  -- MM-DD-YYYY format
+  WHEN posted_date LIKE '%-%-%' THEN
+    STR_TO_DATE(REPLACE(REPLACE(TRIM(posted_date), ' ', ''), '--', '-'), '%m-%d-%Y')
+  ELSE NULL
+END;
+
+-- Removing the posted_date for the clean_date
+ALTER TABLE car_listings DROP COLUMN posted_date;
+ALTER TABLE car_listings CHANGE clean_date posted_date DATE;
+
 
 SELECT * from customer_inquiries;
 SELECT * from car_listings;
