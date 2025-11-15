@@ -1,3 +1,4 @@
+-- Active: 1745290413437@@127.0.0.1@3306@car_sales
 
 -- Work in progress - Oct 2025
 
@@ -109,11 +110,17 @@ UPDATE car_listings
 SET mileage = NULL
 WHERE mileage = 'unknown';
 
+-- Fuel types fixed
+UPDATE car_listings
+SET fuel_type = 'Gasoline'
+WHERE fuel_type = '';
+
 -- Converting mileage to integers
 ALTER TABLE car_listings
 MODIFY mileage INT;
 
--- Fixing models, the model are not correct for the brand name
+
+-- Fixing models: the model names are not correct for the brand name
 CREATE TABLE valid_make_model(
   make VARCHAR(50),
   model VARCHAR(50),
@@ -166,4 +173,3 @@ SELECT DISTINCT model from car_listings;
 SELECT * from customer_inquiries;
 SELECT * from car_listings;
 SELECT * from dealers;
-
