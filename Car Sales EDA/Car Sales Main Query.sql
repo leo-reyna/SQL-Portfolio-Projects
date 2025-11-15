@@ -115,6 +115,10 @@ UPDATE car_listings
 SET fuel_type = 'Gasoline'
 WHERE fuel_type = '';
 
+UPDATE car_listings
+SET price = '$18,500'
+WHERE listing_id = 60
+
 -- Converting mileage to integers
 ALTER TABLE car_listings
 MODIFY mileage INT;
@@ -168,7 +172,7 @@ SET cl.model = vm.model;
 
 -- Cleaning Mixed date formatsin car_listing
 ALTER TABLE car_listings
-ADD COLUMN clean_date DATE;
+ADD clean_date DATE;
 
 SELECT posted_date
 FROM car_listings
@@ -194,15 +198,28 @@ END;
 ALTER TABLE car_listings DROP COLUMN posted_date;
 ALTER TABLE car_listings CHANGE clean_date posted_date DATE;
 
+-- Fixing the price column: Adding a new numerical column to fix it
+ALTER TABLE car_listings
+ADD clean_price DECIMAL (10,2); 
+
 SELECT 
         DATE_FORMAT(posted_date, '%Y-%m') AS month,
         make,
         COUNT(*) AS listings,
-        SUM(price) AS total_sales
+        SUM(price) AS total_price
 FROM    car_listings
 GROUP BY month, make
 ORDER BY month, make;
 
+-- Counting listings per make in car_listings table
+SELECT  make,  
+        COUNT(*) AS listings 
+FROM car_listings
+GROUP BY make
+ORDER BY listings DESC;
+
+
 SELECT * from customer_inquiries;
 SELECT * from car_listings;
 SELECT * from dealers;
+
