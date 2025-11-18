@@ -195,8 +195,10 @@ SET clean_date = CASE
 END;
 
 -- Removing the posted_date for the clean_date
-ALTER TABLE car_listings DROP COLUMN posted_date;
-ALTER TABLE car_listings CHANGE clean_date posted_date DATE;
+ALTER TABLE car_listings 
+DROP COLUMN posted_date;
+ALTER TABLE car_listings 
+CHANGE clean_date posted_date DATE;
 
 -- Fixing the price column: Adding a new numerical column to fix it
 ALTER TABLE car_listings
@@ -211,6 +213,20 @@ FROM    car_listings
 GROUP BY month, make
 ORDER BY month, make;
 
+-- Removing dollar signs from the price column
+UPDATE car_listings
+SET price = REPLACE(REPLACE(price, '$', ''), ',', '')
+WHERE price IS NOT NULL;
+
+-- Changing the format
+ALTER TABLE car_listings
+MODIFY COLUMN price DECIMAL(10,2);
+
+-- To check if any rows still contain non-numeric characters
+SELECT price
+FROM car_listings
+WHERE price REGEXP '[^0-9.]';
+
 -- Counting listings per make in car_listings table
 SELECT  make,  
         COUNT(*) AS listings 
@@ -222,4 +238,6 @@ ORDER BY listings DESC;
 SELECT * from customer_inquiries;
 SELECT * from car_listings;
 SELECT * from dealers;
+
+
 
