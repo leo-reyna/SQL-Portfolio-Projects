@@ -1,4 +1,4 @@
--- Active: 1745290413437@@127.0.0.1@3306@car_sales
+
 
 -- Work in progress - Oct 2025
 
@@ -240,4 +240,6 @@ SELECT * from car_listings;
 SELECT * from dealers;
 
 
-
+-- Checking Mialeage field for nulls 
+SELECT listing_id, make, mileage FROM car_listings
+WHERE mileage IS NULL;
