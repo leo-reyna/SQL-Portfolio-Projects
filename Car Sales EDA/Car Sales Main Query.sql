@@ -1,5 +1,6 @@
 
 
+
 -- Work in progress - Oct 2025
 
 -- Creating Database
@@ -240,6 +241,17 @@ SELECT * from car_listings;
 SELECT * from dealers;
 
 
--- Checking Mialeage field for nulls 
-SELECT listing_id, make, mileage FROM car_listings
-WHERE mileage IS NULL;
+-- Checking a sample
+SELECT COUNT(make), model, price
+from car_listings
+WHERE price >= 50000 AND make ="Toyota"
+GROUP BY make, model, price;
+
+-- Binning by 10,000 price
+WITH CTE1 AS(SELECT 
+listing_id, price, make, FLOOR(price / 10000) * 10000 AS price_bin
+FROM car_listings)
+select make, price_bin, count(*) as make_count
+from CTE1
+GROUP by price_bin, make
+order by price_bin DESC, make;
