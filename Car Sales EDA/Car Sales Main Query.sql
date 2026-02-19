@@ -235,11 +235,9 @@ FROM car_listings
 GROUP BY make
 ORDER BY listings DESC;
 
-
 SELECT * from customer_inquiries;
 SELECT * from car_listings;
 SELECT * from dealers;
-
 
 -- Checking a sample
 SELECT COUNT(make), model, price
@@ -247,11 +245,29 @@ from car_listings
 WHERE price >= 50000 AND make ="Toyota"
 GROUP BY make, model, price;
 
+--
+SELECT  distinct make, count(*) as xx
+from car_listings
+GROUP BY make;
+
 -- Binning by 10,000 price
-WITH CTE1 AS(SELECT 
-listing_id, price, make, FLOOR(price / 10000) * 10000 AS price_bin
-FROM car_listings)
-select make, price_bin, count(*) as make_count
-from CTE1
+WITH 10k_bin_cte AS
+(
+  SELECT 
+    listing_id, 
+    price, 
+    make, 
+    IFNULL(FLOOR(price / 10000) * 50000, 0) AS price_bin
+  FROM car_listings
+  )
+SELECT 
+      make, 
+      price_bin, 
+      count(*) as make_count
+FROM 10k_bin_cte
 GROUP by price_bin, make
 order by price_bin DESC, make;
+
+SELECT make
+FROM car_sales
+
