@@ -88,3 +88,16 @@ SELECT
 FROM space_missions
 GROUP BY FLOOR(YEAR(date) / 10) * 10
 ORDER BY FLOOR(YEAR(date) / 10) * 10;
+
+--The Winning Team: Which country or organization has quietly dominated the space race over the long term, 
+--and what does their winning strategy look like?
+SELECT 
+        company,
+        COUNT(*) AS TotalMissions,
+        COUNT(CASE WHEN MissionStatus = 'Success' THEN 1 END) AS SuccessfulMissions,
+        ROUND(
+            (COUNT(CASE WHEN MissionStatus = 'Success' THEN 1 END) * 100.0) / COUNT(*), 2
+        ) AS SuccessRatePercentage
+FROM space_missions
+GROUP BY company
+ORDER BY SuccessRatePercentage DESC;
