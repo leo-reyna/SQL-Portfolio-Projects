@@ -1,7 +1,7 @@
 
 
 
--- Work in progress - Oct 2025
+--  - Oct 2025
 
 -- Creating Database
 CREATE DATABASE car_sales
