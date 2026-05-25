@@ -19,6 +19,7 @@ sales_order_items is the line items — what they bought, how many, at what pric
 -- REVENUE --
 -------------
 
+
 -- Total Revenue
 SELECT SUM(order_total) AS total_revenue
 FROM sales_orders;
@@ -96,6 +97,24 @@ ORDER BY
     year_sold ASC, 
     EXTRACT(MONTH FROM MIN(so.order_date)) ASC;
 
+-- Revemue by day
+SELECT
+    DATE(so.order_date) AS day,
+    SUM((soi.quantity * soi.unit_price_at_sale) - soi.discount_amount) AS revenue
+FROM sales_order_items soi
+JOIN sales_orders so ON so.order_id = soi.order_id
+GROUP BY day
+ORDER BY day;
+
+-- Revenue by month
+SELECT
+    DATE_TRUNC('month', so.order_date) AS month,
+    SUM((soi.quantity * soi.unit_price_at_sale) - soi.discount_amount) AS revenue
+FROM sales_order_items soi
+JOIN sales_orders so ON so.order_id = soi.order_id
+GROUP BY month
+ORDER BY month;
+
 -----------
 -- ORDERS --
 -----------
@@ -120,6 +139,7 @@ ORDER BY total_orders DESC;
 SELECT 
      AVG(order_total) as avg_order_total
 FROM sales_orders;
+
 
 SELECT * from sales_orders;
 -- Average Order Value by Customer Type
