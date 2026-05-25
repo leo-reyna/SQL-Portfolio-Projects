@@ -110,7 +110,8 @@ SELECT
     c.customer_type,
     COUNT(*) AS total_orders
 FROM sales_orders
-JOIN customers as c ON c.customer_id = so.customer_id
+JOIN customers as c 
+    ON c.customer_id = so.customer_id
 GROUP BY c.customer_type
 ORDER BY total_orders DESC;
 
@@ -126,7 +127,8 @@ SELECT
     c.customer_type,
     AVG(order_total) as order_avg_by_type
 FROM sales_orders as so
-JOIN customers as c ON c.customer_id = so.customer_id
+JOIN customers as c 
+    ON c.customer_id = so.customer_id
 GROUP BY c.customer_type
 ORDER BY order_avg_by_type DESC;
 
@@ -157,7 +159,10 @@ JOIN products AS p
     ON p.product_id = soi.product_id
 JOIN departments as d
     on p.department_id = d.department_id
-GROUP BY d.name, p.product_id, p.product_name
+GROUP BY 
+    d.name, 
+    p.product_id, 
+    p.product_name
 ORDER BY revenue DESC
 LIMIT 10;
 
@@ -186,10 +191,18 @@ SELECT
     COUNT(DISTINCT so.order_id) AS total_orders,
     SUM((soi.quantity * soi.unit_price_at_sale) - soi.discount_amount) AS total_revenue
 FROM sales_order_items AS soi
-JOIN sales_orders AS so  ON so.order_id = soi.order_id
-JOIN employees AS e      ON e.employee_id = so.employee_id
-JOIN departments AS d    ON d.department_id = e.department_id
-GROUP BY e.employee_id, e.first_name, e.last_name, e.role, d.name
+JOIN sales_orders AS so 
+    ON so.order_id = soi.order_id
+JOIN employees AS e  
+    ON e.employee_id = so.employee_id
+JOIN departments AS d 
+    ON d.department_id = e.department_id
+GROUP BY 
+    e.employee_id, 
+    e.first_name, 
+    e.last_name, 
+    e.role, 
+    d.name
 ORDER BY total_revenue DESC;
 
 
@@ -235,6 +248,10 @@ JOIN sales_orders as so
     ON soi.order_id = so.order_id
 JOIN customers as c
     on c.customer_id = so.customer_id
-GROUP BY c.customer_id, c.first_name, c.last_name, c.customer_type
+GROUP BY 
+        c.customer_id, 
+        c.first_name, 
+        c.last_name, 
+        c.customer_type
 ORDER BY revenue DESC
 LIMIT 10;
