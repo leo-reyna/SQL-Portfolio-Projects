@@ -275,3 +275,4 @@ GROUP BY
         c.customer_type
 ORDER BY revenue DESC
 LIMIT 10;
+

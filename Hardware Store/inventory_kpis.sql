@@ -7,12 +7,50 @@
 -- STOCK LEVELS  --
 -------------------
 
+-- Checking tables
+SELECT * FROM inventory
+LIMIT 15;
+
+SELECT * FROM products
+LIMIT 15;
+
+SELECT * FROM departments;
 -- Current Stock by Department
--- TODO
+
+SELECT  d.name as department_name,
+        SUM(i.quantity_on_hand) as on_hand,
+        SUM(i.quantity_on_hand * p.unit_cost) as total_stock_value
+FROM inventory as i
+JOIN products as p
+    ON i.product_id = p.product_id
+JOIN departments as d 
+    ON d.department_id = p.department_id
+WHERE p.is_discontinued = FALSE
+GROUP BY d.name
+ORDER BY d.name
 
 
 -- Inventory Health Status (Out of Stock / Below Reorder / Overstocked / Normal)
--- TODO
+SELECT
+    p.product_id,
+    p.product_name,
+    d.name as dept_name,
+    i.quantity_on_hand,
+    p.reorder_point,
+    CASE
+        WHEN (i.quantity_on_hand = 0) THEN 'Out of Stock'
+        WHEN (i.quantity_on_hand < p.reorder_point) THEN 'Below Reorder'
+        WHEN (i.quantity_on_hand > p.reorder_point) THEN 'Overstocked'
+        ELSE 'Normal'
+    END AS stock_status
+FROM inventory as i
+JOIN products as p
+    ON i.product_id = p.product_id
+JOIN departments as d 
+    ON d.department_id = p.department_id
+WHERE p.is_discontinued = FALSE
+GROUP BY p.product_id, p.product_name, d.name, i.quantity_on_hand
+ORDER BY p.product_id, p.product_name, d.name, i.quantity_on_hand;
 
 
 -- Products Below Reorder Point
