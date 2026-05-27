@@ -40,7 +40,7 @@ SELECT
     CASE
         WHEN (i.quantity_on_hand = 0) THEN 'Out of Stock'
         WHEN (i.quantity_on_hand < p.reorder_point) THEN 'Below Reorder'
-        WHEN (i.quantity_on_hand > p.reorder_point) THEN 'Overstocked'
+        WHEN (i.quantity_on_hand > p.reorder_point * 8) THEN 'Overstocked'
         ELSE 'Normal'
     END AS stock_status
 FROM inventory as i
