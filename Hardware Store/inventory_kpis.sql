@@ -49,7 +49,6 @@ JOIN products as p
 JOIN departments as d 
     ON d.department_id = p.department_id
 WHERE p.is_discontinued = FALSE
-GROUP BY p.product_id, p.product_name, d.name, i.quantity_on_hand
 ORDER BY p.product_id, p.product_name, d.name, i.quantity_on_hand;
 
 
