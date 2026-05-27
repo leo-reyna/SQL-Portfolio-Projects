@@ -32,14 +32,16 @@ ORDER BY d.name;
 
 
 -- Inventory Health Status (Out of Stock / Below Reorder / Overstocked / Normal)
-WITH common_stock AS (
+-- Creating a view to make my life easier when calling it for the rest of this analysis
+CREATE OR REPLACE VIEW vw_common_stock AS 
     SELECT
         p.product_id,
         p.product_name,
         d.name as dept_name,
-        COALESCE(i.quantity_on_hand,0) as quantity_on_hand,
-        COALESCE(p.reorder_point,0) as reorder_point,
-        COALESCE(p.unit_cost,0) as unit_cost,
+        COALESCE(i.quantity_on_hand, 0) AS quantity_on_hand,
+        COALESCE(i.quantity_on_order, 0) AS quantity_on_order,
+        COALESCE(p.reorder_point, 0) AS reorder_point,
+        COALESCE(p.unit_cost, 0) AS unit_cost,
         CASE
             WHEN (COALESCE(i.quantity_on_hand,0) = 0) THEN 'Out of Stock'
             WHEN (COALESCE(i.quantity_on_hand,0) < COALESCE(p.reorder_point,0)) THEN 'Below Reorder'
@@ -51,16 +53,14 @@ WITH common_stock AS (
         ON i.product_id = p.product_id
     JOIN departments as d 
         ON d.department_id = p.department_id
-    WHERE p.is_discontinued = FALSE
-)
-SELECT product_id, product_name, dept_name, quantity_on_hand, reorder_point, stock_status
-FROM common_stock
-ORDER BY product_id, product_name, dept_name, quantity_on_hand;
+    WHERE p.is_discontinued = FALSE;
 
+-- All products
+SELECT * FROM vw_common_stock ORDER BY product_id;
 
 -- Products Below Reorder Point
 SELECT product_id, product_name, dept_name, quantity_on_hand, reorder_point, stock_status
-FROM common_stock
+FROM vw_common_stock
 WHERE quantity_on_hand > 0
     AND quantity_on_hand < reorder_point
 ORDER BY quantity_on_hand ASC;
@@ -68,17 +68,14 @@ ORDER BY quantity_on_hand ASC;
 
 -- Products Out of Stock
 SELECT product_id, product_name, dept_name, quantity_on_hand, reorder_point, stock_status
-FROM common_stock
+FROM vw_common_stock
 WHERE quantity_on_hand = 0;
 
 
 -- Products Overstocked
 SELECT product_id, product_name, dept_name, quantity_on_hand, reorder_point, stock_status
-FROM common_stock
+FROM vw_common_stock
 WHERE quantity_on_hand > reorder_point * 8;
-
-
-
 
 
 -------------------
