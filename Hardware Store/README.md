@@ -15,7 +15,7 @@ This database includes:
     
 - A foundation for BI dashboards (Tableau, Power BI, Looker, Metabase)
     
-# ERD
+## 📚 Entity‑Relationship Diagram 
 
 ```mermaid
 erDiagram
