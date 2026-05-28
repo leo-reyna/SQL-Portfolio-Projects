@@ -33,9 +33,11 @@ ORDER BY d.name;
 
 -- Inventory Health Status (Out of Stock / Below Reorder / Overstocked / Normal)
 -- Creating a view to make my life easier when calling it for the rest of this analysis
+DROP VIEW IF EXISTS vw_common_stock;
 CREATE OR REPLACE VIEW vw_common_stock AS 
     SELECT
         p.product_id,
+        p.supplier_id,
         p.product_name,
         d.name as dept_name,
         COALESCE(i.quantity_on_hand, 0) AS quantity_on_hand,
@@ -55,11 +57,20 @@ CREATE OR REPLACE VIEW vw_common_stock AS
         ON d.department_id = p.department_id
     WHERE p.is_discontinued = FALSE;
 
+
 -- All products
 SELECT * FROM vw_common_stock ORDER BY product_id;
 
+SELECT * FROM vw_common_stock LIMIT 5;
+
 -- Products Below Reorder Point
-SELECT product_id, product_name, dept_name, quantity_on_hand, reorder_point, stock_status
+SELECT     
+    product_id, 
+    product_name, 
+    dept_name, 
+    quantity_on_hand, 
+    reorder_point, 
+    stock_status
 FROM vw_common_stock
 WHERE quantity_on_hand > 0
     AND quantity_on_hand < reorder_point
@@ -67,13 +78,25 @@ ORDER BY quantity_on_hand ASC;
 
 
 -- Products Out of Stock
-SELECT product_id, product_name, dept_name, quantity_on_hand, reorder_point, stock_status
+SELECT 
+    product_id, 
+    product_name, 
+    dept_name, 
+    quantity_on_hand, 
+    reorder_point, 
+    stock_status
 FROM vw_common_stock
 WHERE quantity_on_hand = 0;
 
 
 -- Products Overstocked
-SELECT product_id, product_name, dept_name, quantity_on_hand, reorder_point, stock_status
+SELECT 
+        product_id, 
+        product_name, 
+        dept_name, 
+        quantity_on_hand, 
+        reorder_point, 
+        stock_status
 FROM vw_common_stock
 WHERE quantity_on_hand > reorder_point * 8;
 
@@ -83,11 +106,31 @@ WHERE quantity_on_hand > reorder_point * 8;
 -------------------
 
 -- Products Needing Reorder (on_hand < reorder_point AND nothing on order)
--- TODO
+SELECT
+    product_id,
+    product_name,
+    dept_name,
+    quantity_on_hand,
+    quantity_on_order,
+    reorder_point
+FROM vw_common_stock
+WHERE quantity_on_hand < reorder_point
+  AND quantity_on_order = 0
+ORDER BY quantity_on_hand ASC;
 
 
 -- Total Units Currently on Order by Supplier
--- TODO
+SELECT 
+        s.supplier_name,
+        SUM(cs.quantity_on_order) as total_units_on_order,
+        SUM(cs.quantity_on_order * cs.unit_cost) as estimated_order_value,
+        COUNT(cs.product_id) AS product_on_order
+FROM vw_common_stock as cs
+JOIN suppliers as s
+    on cs.supplier_id = s.supplier_id
+WHERE cs.quantity_on_order > 0
+GROUP BY s.supplier_id, s.supplier_name
+ORDER BY total_units_on_order; 
 
 
 
@@ -97,17 +140,66 @@ WHERE quantity_on_hand > reorder_point * 8;
 -------------------
 
 -- Units Sold per Product (base for turnover)
--- TODO
+SELECT 
+    cs.product_id,
+    cs.product_name,
+    sum(soi.quantity) as units_sold
+FROM vw_common_stock as cs
+JOIN sales_order_items as soi
+    on cs.product_id = soi.product_id
+GROUP BY cs.product_id,  cs.product_name
+ORDER BY units_sold DESC;
+
+
 
 
 -- Inventory Turnover Rate per Product
--- hint: units_sold / avg_quantity_on_hand
--- TODO
-
+WITH units_sold AS (
+    SELECT
+        cs.product_id,
+        cs.product_name,
+        cs.dept_name,
+        cs.quantity_on_hand,
+        SUM(soi.quantity) AS units_sold
+    FROM vw_common_stock AS cs
+    JOIN sales_order_items AS soi ON soi.product_id = cs.product_id
+    GROUP BY cs.product_id, cs.product_name, cs.dept_name, cs.quantity_on_hand
+)
+SELECT
+    product_id,
+    product_name,
+    dept_name,
+    units_sold,
+    quantity_on_hand,
+    ROUND((units_sold::NUMERIC / NULLIF(quantity_on_hand, 0)), 2) AS turnover_rate,
+    ROUND((365.0 / NULLIF(units_sold::NUMERIC / NULLIF(quantity_on_hand, 0), 0)), 2) AS days_on_hand
+FROM units_sold
+WHERE quantity_on_hand > 0
+ORDER BY turnover_rate DESC;
 
 -- Days of Inventory on Hand per Product
 -- hint: 365 / turnover_rate
--- TODO
+WITH units_sold AS (
+    SELECT
+        cs.product_id,
+        cs.product_name,
+        cs.dept_name,
+        cs.quantity_on_hand,
+        SUM(soi.quantity) AS units_sold
+    FROM vw_common_stock AS cs
+    JOIN sales_order_items AS soi ON soi.product_id = cs.product_id
+    GROUP BY cs.product_id, cs.product_name, cs.dept_name, cs.quantity_on_hand
+)
+SELECT
+    product_id,
+    product_name,
+    dept_name,
+    units_sold,
+    quantity_on_hand,
+    ROUND((365.0 / NULLIF(units_sold::NUMERIC / NULLIF(quantity_on_hand, 0), 0)), 2) AS days_on_hand
+FROM units_sold
+WHERE quantity_on_hand > 0
+ORDER BY days_on_hand DESC;
 
 
 
