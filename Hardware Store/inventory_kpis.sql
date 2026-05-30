@@ -202,15 +202,44 @@ WHERE quantity_on_hand > 0
 ORDER BY days_on_hand DESC;
 
 
-
+SELECT * FROM suppliers;
 
 -------------------
 -- SUPPLIER LINK  --
 -------------------
 
 -- Stock Value by Supplier (quantity_on_hand * unit_cost)
--- TODO
+SELECT
+    s.supplier_id,
+    s.supplier_name,
+    s.lead_time_days,
+    COUNT(cs.product_id) as total_products,
+    sum(COALESCE(cs.quantity_on_hand,0)) as total_on_hand,
+    SUM(COALESCE(cs.quantity_on_hand, 0) * COALESCE(cs.unit_cost, 0)) AS inventory_value
+FROM vw_common_stock as cs
+JOIN suppliers as s
+    ON cs.supplier_id = s.supplier_id
+GROUP BY
+   s.supplier_id, s.supplier_name
+ORDER BY 
+    inventory_value DESC;
+
 
 
 -- Products at Risk by Supplier (below reorder point grouped by supplier)
--- TODO
+SELECT
+    s.supplier_id,
+    s.supplier_name,
+    s.lead_time_days,
+    COUNT(cs.product_id) as at_risk_product,
+    sum(COALESCE(cs.quantity_on_hand,0)) as total_on_hand,
+    SUM(COALESCE(cs.quantity_on_hand, 0) * COALESCE(cs.unit_cost, 0)) AS inventory_value
+FROM vw_common_stock as cs
+JOIN suppliers as s
+    ON cs.supplier_id = s.supplier_id
+WHERE cs.stock_status in ('Below Reorder', 'Out of Stock')
+GROUP BY
+   s.supplier_id, s.supplier_name
+ORDER BY 
+    inventory_value DESC;
+
